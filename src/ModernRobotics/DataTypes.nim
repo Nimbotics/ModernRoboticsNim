@@ -54,7 +54,10 @@ type poly* {.pure.} = enum
   cubic, quintic 
 
 template norm*(mat:Matrices or Vectors):untyped =
-    mat.l_2
+  mat.l_2
+
+template norm*[V](v:TriVector[V]):untype = 
+  v.l_2
 
 template norm*[V](arr:array[3,V]):untyped =
   Vector(arr).l_2
